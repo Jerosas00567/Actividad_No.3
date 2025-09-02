@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Panadería</title>
+</head>
+<body>
+  <h1>Panadería</h1>
+  <p>Calculadora de precio de pan no fresco</p>
+
+  <label for="barras">Número de barras no frescas:</label>
+  <input type="number" id="barras" min="0">
+  <button onclick="calcular()">Calcular</button>
+
+  <h2>Resultado:</h2>
+  <p id="precioBarra"></p>
+  <p id="descuento"></p>
+  <p id="total"></p>
+
+  <script>
+    function calcular() {
+      const precioNormal = 12500;      // Precio de una barra fresca
+      const descuento = 0.60;          // 60%
+      
+      const barras = parseInt(document.getElementById("barras").value);
+
+      if (isNaN(barras) || barras < 0) {
+        alert("Por favor, ingresa un número válido de barras.");
+        return;
+      }
+
+      // Cálculos
+      const precioTotalNormal = barras * precioNormal;
+      const descuentoTotal = precioTotalNormal * descuento;
+      const precioFinal = precioTotalNormal - descuentoTotal;
+
+      // Mostrar resultados
+      document.getElementById("precioBarra").textContent = 
+        `Precio habitual por barra: $${precioNormal}`;
+      document.getElementById("descuento").textContent = 
+        `Descuento aplicado: ${descuento * 100}%`;
+      document.getElementById("total").textContent = 
+        `Coste total final: $${precioFinal}`;
+    }
+  </script>
+</body>
+</html>
