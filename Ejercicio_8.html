@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peso total del paquete</title>
+</head>
+<body>
+    <h1>Calcular peso del paquete</h1>
+
+    <label for="payasos">Numero de payasos vendidos:</label>
+    <input type="number"id="payasos"><br><br>
+
+    <label for="muñecas">Numero de muñecas vendidas:</label>
+    <input type="number"id="muñecas"><br><br>
+
+    <button onclick="calcularPeso()">Calcular</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPeso() {
+            // Pesos fijos
+            const pesoPayaso = 112;
+            const pesoMuñeca = 75;
+
+            // Leer valores ingresados
+            let payasos = parseInt(document.getElementById("payasos").value);
+            let muñecas = parseInt(document.getElementById("muñecas").value);
+
+            // Si no escriben nada, tratamos como 0
+            if (isNaN(payasos)) payasos = 0;
+            if (isNaN(muñecas)) muñecas = 0;
+
+            // Calculo
+            let pesoTotal = (payasos * pesoPayaso) + (muñecas * pesoMuñeca);
+
+            // Mostrar resultado
+
+            document.getElementById("resultado").innerText = "El peso total del paquetes es: " + pesoTotal + "gramos";
+        }
+    </script>
+</body>
+</html>
