@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Total de Pago</title>
+</head>
+<body>
+    <script>
+      let horas = prompt("Ingrese horas");
+      let coste = prompt("Ingrese costo");
+
+      horas = parseInt(horas.replace(/\./g,""));
+      coste = parseInt(coste.replace(/\./g,""));
+
+      let paga = horas * coste;
+
+      document.write("El pago es: " + paga.toLocaleString("es-CO"));
+    </script>
+</body>
+</html>
