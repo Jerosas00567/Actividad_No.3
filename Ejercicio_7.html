@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Inversion</title>
+</head>
+<body>
+    <script>
+        let cantidadInvertir = prompt("Ingrese la cantidad a invertir:");
+        let interesAnual = prompt("Ingrese el interés anual (en %):");
+        let numeroAños = prompt("Ingrese el número de años:");
+
+    cantidadInvertir = parseFloat(cantidadInvertir);
+    interesAnual = parseFloat(interesAnual);
+    numeroAños = parseInt(numeroAños);
+
+    let capitalObtenido = cantidadInvertir * Math.pow((1 + interesAnual / 100), numeroAños);
+
+    alert("El capital obtenido tras " + numeroAños + " años es: " + capitalObtenido.toFixed(2));
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de velocidad</title>
+</head>
+<body>
+    <h2>Conversion de km/h a m/s</h2>
+    <label for="velocidad">Ingrese velocidad (km/h):</label>
+    <input type="number" id="velocidad">
+    <button onclick="convertir()">convertir</button>
+
+    <p id="resultado"></p>
+
+    <script>
+        function convertir() {
+            let kmh = parseFloat(document.getElementById("velocidad").value);
+            if (isNaN(kmh)) {
+                document.getElementById("resultado").innerText = "Por favor ingrese un numero valido.";
+                return;
+            }
+            let ms = kmh / 3.6;
+            document.getElementById("resultado").innerText = kmh + " km/h = " + ms.toFixed(2) + " m/s";
+        }
+    </script>
+</body>
+</html>
